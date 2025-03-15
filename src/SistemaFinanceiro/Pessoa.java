@@ -2,7 +2,7 @@ package SistemaFinanceiro;
 
 import java.util.Scanner;
 
-public class Pessoa {
+public abstract class Pessoa {
     Scanner scanner = new Scanner(System.in);
 
     //Atributos
