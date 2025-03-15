@@ -5,20 +5,20 @@ import java.util.Scanner;
 public abstract class Pessoa {
     Scanner scanner = new Scanner(System.in);
 
-    //Atributos
+    // Atributos
     private int id;
     private String nome, email;
     private Endereco endereco;
     private Telefone telefone;
-    
-    //Contrutor
-    public Pessoa(){
+
+    // Contrutor
+    public Pessoa() {
         this.endereco = new Endereco();
         this.telefone = new Telefone();
     }
 
-    //Metodo de entrada
-    public void entrar(int id, String nome, Endereco endereco, Telefone telefone, String email){
+    // Metodo de entrada
+    public void entrar(int id, String nome, Endereco endereco, Telefone telefone, String email) {
         System.out.println();
         System.out.println("--- Cadastro de Pessoa ---");
         System.out.print("Digite o ID: ");
@@ -32,7 +32,7 @@ public abstract class Pessoa {
         this.email = scanner.nextLine();
 
         System.out.println("\n--- Cadastro de Endereço ---");
-        String logradouro = ""; 
+        String logradouro = "";
         int numero = 0;
         String complemento = "";
         String bairro = "";
@@ -48,15 +48,15 @@ public abstract class Pessoa {
         int numerotel = 0;
 
         this.telefone.entrar(ddd, numerotel);
-        System.out.println(); 
+        System.out.println();
     }
 
-    //Metodo de Impressao
-    public void imprimir(){
+    // Metodo de Impressao
+    public void imprimir() {
         System.out.println("--- Pessoa ---");
-        System.out.println("ID: "+ id);
-        System.out.println("Nome: "+ nome);
-        System.out.println("Email: "+email);
+        System.out.println("ID: " + id);
+        System.out.println("Nome: " + nome);
+        System.out.println("Email: " + email);
         this.endereco.imprimir();
         this.telefone.imprimir();
         System.out.println();

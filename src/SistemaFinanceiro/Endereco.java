@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Endereco {
     Scanner scanner = new Scanner(System.in);
 
-
     // Atributos
     private String logradouro;
     private int numero;
@@ -19,8 +18,9 @@ public class Endereco {
     public Endereco() {
     }
 
-    // Metodo para entrada 
-    public void entrar(String logradouro, int numero, String complemento, String bairro, String cidade, String estado, String cep) {
+    // Metodo para entrada
+    public void entrar(String logradouro, int numero, String complemento, String bairro, String cidade, String estado,
+            String cep) {
 
         System.out.print("Digite o Logradouro: ");
         this.logradouro = scanner.nextLine();
@@ -43,7 +43,7 @@ public class Endereco {
 
         System.out.print("Digite o CEP: ");
         this.cep = scanner.nextLine();
-        
+
     }
 
     // Metodo para exibir dados
@@ -89,7 +89,7 @@ public class Endereco {
 
     // Setters
 
-    public void setEndereco(){
+    public void setEndereco() {
         setLogradouro(logradouro);
         setNumero(numero);
         setComplemento(complemento);
@@ -135,4 +135,3 @@ public class Endereco {
         this.cep = scanner.nextLine();
     }
 }
-

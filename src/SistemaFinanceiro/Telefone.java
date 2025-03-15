@@ -26,32 +26,31 @@ public class Telefone {
         System.out.println("Telefone: (" + ddd + ")" + numerotel);
     }
 
-    //Getters
-    public int getDdd(){
+    // Getters
+    public int getDdd() {
         return ddd;
     }
 
-    public int getNumero(){
+    public int getNumero() {
         return numerotel;
     }
 
-    //Setters
-    public void setDdd(int ddd){
+    // Setters
+    public void setDdd(int ddd) {
         System.out.println("Digite o novo DDD: ");
         this.ddd = scanner.nextInt();
     }
 
-    public void setNumero(int numero){
+    public void setNumero(int numero) {
         System.out.println("Digite o numero: ");
         this.numerotel = scanner.nextInt();
     }
 
-    public void setTelefone(int ddd, int numero){
+    public void setTelefone(int ddd, int numero) {
         System.out.println("Digite o novo DDD: ");
         this.ddd = scanner.nextInt();
         System.out.println("Digite o numero: ");
         this.numerotel = scanner.nextInt();
     }
-
 
 }
