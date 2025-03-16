@@ -3,71 +3,37 @@ package SistemaFinanceiro;
 import java.util.Scanner;
 
 public abstract class PessoaJuridica extends Pessoa {
-    Scanner scanner = new Scanner(System.in);
-
-    // Atributos privados
     private String cnpj;
     private String inscricaoEstadual;
     private String contato;
 
-    // Construtor padrão
-    public PessoaJuridica() {
-        super(); // Chama o construtor da classe pai (Pessoa)
+    public String getCnpj() { return cnpj; }
+    public void setCnpj(String cnpj) { this.cnpj = cnpj; }
+    public String getInscricaoEstadual() { return inscricaoEstadual; }
+    public void setInscricaoEstadual(String inscricaoEstadual) { this.inscricaoEstadual = inscricaoEstadual; }
+    public String getContato() { return contato; }
+    public void setContato(String contato) { this.contato = contato; }
+
+    @Override
+    public void entrar() {
+        super.entrar();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o CNPJ: ");
+        this.cnpj = scanner.nextLine();
+
+        System.out.print("Digite a inscrição estadual: ");
+        this.inscricaoEstadual = scanner.nextLine();
+
+        System.out.print("Digite o contato: ");
+        this.contato = scanner.nextLine();
     }
 
-    // Método para entrada de dados específicos de PessoaJuridica
-    public void entrar(String cnpj, String inscricaoEstadual, String contato) {
-        this.cnpj = cnpj;
-        this.inscricaoEstadual = inscricaoEstadual;
-        this.contato = contato;
-        System.out.println();
-    }
-
-    // Metodo para a impresao dos dados de pessoa juridica
-
-    public void imprimmir() {
+    @Override
+    public void imprimir() {
         super.imprimir();
-        System.out.println("CNPJ: " + cnpj);
-        System.out.println("Inscrição estadual: " + inscricaoEstadual);
-        System.out.println("Contato: " + contato);
-    }
-
-    // Getters
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public String getInscricaoEstadual() {
-        return inscricaoEstadual;
-    }
-
-    public String getContato() {
-        return contato;
-    }
-
-    // Setters
-    public void setCnpj() {
-        System.out.println("Digite o novo CNPJ: ");
-        this.cnpj = scanner.nextLine();
-    }
-
-    public void setInscricaoEstadual() {
-        System.out.println("Digite a nova Inscrição estadual: ");
-        this.inscricaoEstadual = scanner.nextLine();
-    }
-
-    public void setContato() {
-        System.out.println("Digite o novo Contato: ");
-        this.contato = scanner.nextLine();
-
-    }
-
-    public void setPessoaJuridica() {
-        System.out.println("Digite o novo CNPJ: ");
-        this.cnpj = scanner.nextLine();
-        System.out.println("Digite a nova Inscrição estadual: ");
-        this.inscricaoEstadual = scanner.nextLine();
-        System.out.println("Digite o novo Contato: ");
-        this.contato = scanner.nextLine();
+        System.out.println("CNPJ: " + this.cnpj);
+        System.out.println("Inscrição Estadual: " + this.inscricaoEstadual);
+        System.out.println("Contato: " + this.contato);
     }
 }

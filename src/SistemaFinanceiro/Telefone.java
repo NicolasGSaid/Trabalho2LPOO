@@ -3,54 +3,26 @@ package SistemaFinanceiro;
 import java.util.Scanner;
 
 public class Telefone {
-    Scanner scanner = new Scanner(System.in);
+    private String ddd;
+    private String numero;
 
-    // Atributos
-    private int ddd;
-    private int numerotel;
+    public void entrar() {
+        Scanner scanner = new Scanner(System.in);
 
-    // Construtor
-    public Telefone() {
-    }
-
-    // Método de entrada
-    public void entrar(int ddd, int numerotel) {
         System.out.print("Digite o DDD: ");
-        this.ddd = scanner.nextInt();
-        System.out.print("Digite o Número: ");
-        this.numerotel = scanner.nextInt();
+        this.ddd = scanner.nextLine();
+
+        System.out.print("Digite o número: ");
+        this.numero = scanner.nextLine();
     }
 
-    // Método para impressao
     public void imprimir() {
-        System.out.println("Telefone: (" + ddd + ")" + numerotel);
+        System.out.println("Telefone: (" + this.ddd + ") " + this.numero);
     }
 
-    // Getters
-    public int getDdd() {
-        return ddd;
-    }
-
-    public int getNumero() {
-        return numerotel;
-    }
-
-    // Setters
-    public void setDdd(int ddd) {
-        System.out.println("Digite o novo DDD: ");
-        this.ddd = scanner.nextInt();
-    }
-
-    public void setNumero(int numero) {
-        System.out.println("Digite o numero: ");
-        this.numerotel = scanner.nextInt();
-    }
-
-    public void setTelefone(int ddd, int numero) {
-        System.out.println("Digite o novo DDD: ");
-        this.ddd = scanner.nextInt();
-        System.out.println("Digite o numero: ");
-        this.numerotel = scanner.nextInt();
-    }
-
+    // Getters e Setters
+    public String getDdd() { return ddd; }
+    public void setDdd(String ddd) { this.ddd = ddd; }
+    public String getNumero() { return numero; }
+    public void setNumero(String numero) { this.numero = numero; }
 }

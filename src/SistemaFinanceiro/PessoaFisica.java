@@ -3,70 +3,37 @@ package SistemaFinanceiro;
 import java.util.Scanner;
 
 public abstract class PessoaFisica extends Pessoa {
-    Scanner scanner = new Scanner(System.in);
-
-    // Atributos privados
     private String cpf;
     private String rg;
     private String emissor;
 
-    // Construtor padrão
-    public PessoaFisica() {
-        super(); // Chama o construtor da classe pai (Pessoa)
+    public String getCpf() { return cpf; }
+    public void setCpf(String cpf) { this.cpf = cpf; }
+    public String getRg() { return rg; }
+    public void setRg(String rg) { this.rg = rg; }
+    public String getEmissor() { return emissor; }
+    public void setEmissor(String emissor) { this.emissor = emissor; }
+
+    @Override
+    public void entrar() {
+        super.entrar();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o CPF: ");
+        this.cpf = scanner.nextLine();
+
+        System.out.print("Digite o RG: ");
+        this.rg = scanner.nextLine();
+
+        System.out.print("Digite o emissor do RG: ");
+        this.emissor = scanner.nextLine();
     }
 
-    // Método para entrada de dados específicos de PessoaJuridica
-    public void entrar(String cpf, String rg, String emissor) {
-        this.cpf = cpf;
-        this.rg = rg;
-        this.emissor = emissor;
-        System.out.println();
-    }
-
-    // Metodo para a impresao dos dados de pessoa juridica
-
-    public void imprimmir() {
+    @Override
+    public void imprimir() {
         super.imprimir();
-        System.out.println("CPF: " + cpf);
-        System.out.println("RG: " + rg);
-        System.out.println("Emissor: " + emissor);
-    }
-
-    // Getters
-    public String getCpf() {
-        return cpf;
-    }
-
-    public String getRg() {
-        return rg;
-    }
-
-    public String getEmissor() {
-        return emissor;
-    }
-
-    // Setters
-    public void setCpf() {
-        System.out.println("Digite o novo CPF: ");
-        this.cpf = scanner.nextLine();
-    }
-
-    public void setRg() {
-        System.out.println("Digite o novo RG: ");
-        this.rg = scanner.nextLine();
-    }
-
-    public void setEmissor() {
-        System.out.println("Digite o novo Emissor: ");
-        this.emissor = scanner.nextLine();
-    }
-
-    public void setPessoaFisica() {
-        System.out.println("Digite o novo CPF: ");
-        this.cpf = scanner.nextLine();
-        System.out.println("Digite o novo RG: ");
-        this.rg = scanner.nextLine();
-        System.out.println("Digite o novo Emissor: ");
-        this.emissor = scanner.nextLine();
+        System.out.println("CPF: " + this.cpf);
+        System.out.println("RG: " + this.rg);
+        System.out.println("Emissor do RG: " + this.emissor);
     }
 }
