@@ -3,7 +3,7 @@ import java.util.Scanner;
 //import SistemaFinanceiro.Endereco;
 //import SistemaFinanceiro.Telefone;
 
-public class Pessoa {
+public abstract class Pessoa {
 
     int id;
     String nome, email;
