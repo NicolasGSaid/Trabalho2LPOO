@@ -45,34 +45,79 @@ public class Interface {
                     System.out.println("Voltar............[5]");
                     System.out.print("Opção: ");
                     menuSecundario = input.nextInt();
+                    input.nextLine(); // Limpar o buffer
 
-                    if (menuSecundario == 1) {
+                    // Menu de Pessoas
+                    if (menuSecundario == 1) { // Incluir Pessoa
                         System.out.println(titulo);
                         System.out.println(subtituloCentralizado2);
                         Pessoa pessoa = new Pessoa();
                         pessoa.entrar(input);
                         pessoas.add(pessoa);
                         System.out.println("Pessoa cadastrada com sucesso!");
-                    } else if (menuSecundario == 2) {
-                        System.out.println("Alterar Pessoa");
-                    } else if (menuSecundario == 3) {
 
+                    } else if (menuSecundario == 2) { // Alterar Pessoa
+                        if (pessoas.isEmpty()) {
+                            System.out.println("Nenhuma pessoa cadastrada!");
+                        } else {
+                            System.out.println("Digite o ID da pessoa que deseja alterar: ");
+                            int idAlterar = input.nextInt();
+                            input.nextLine(); // Limpar o buffer
+
+                            // Procurar a pessoa pelo ID
+                            Pessoa pessoaEncontrada = null;
+                            for (Pessoa pessoa : pessoas) {
+                                if (pessoa.getId() == idAlterar) {
+                                    pessoaEncontrada = pessoa;
+                                    break;
+                                }
+                            }
+                            if (pessoaEncontrada != null) {
+                                System.out.println("Pessoa encontrada! Insira os novos dados:");
+                                pessoaEncontrada.entrar(input); // Alterar os dados
+                                System.out.println("Pessoa alterada com sucesso!");
+                            } else {
+                                System.out.println("Pessoa não encontrada!");
+                            }
+                        }
+
+                    } else if (menuSecundario == 3) {
                         if (pessoas.isEmpty()) {
                             System.out.println("Nenhuma pessoa cadastrada!");
                         } else {
                             System.out.println("Pessoas cadastradas: ");
-
                             for (Pessoa pessoa : pessoas) {
                                 pessoa.imprimir();
                             }
                         }
                     } else if (menuSecundario == 4) {
-                        System.out.println("Excluir Pessoa");
+                        if (pessoas.isEmpty()){
+                            System.out.println("Nenhuma pessoa cadastrada!");
+                        } else {
+                            System.out.println("Digite o ID da pessoa que deseja excluir: ");
+                            int idExcluir = input.nextInt();
+                            input.nextLine(); // Limpar o buffer
+
+                            // Procurar a pessoa pelo ID
+                            Pessoa pessoaEncontrada = null;
+                            for (Pessoa pessoa : pessoas) {
+                                if (pessoa.getId() == idExcluir) {
+                                    pessoaEncontrada = pessoa;
+                                    break;
+                                }
+                            }
+                            if (pessoaEncontrada != null) {
+                                pessoas.remove(pessoaEncontrada);
+                                System.out.println("Pessoa excluída com sucesso!");
+                            } else {
+                                System.out.println("Pessoa não encontrada!");
+                            }
+                        }
                     } else {
                         System.out.println("Opção inválida!");
                     }
                 }
             }
-        }
+        } 
     }
 }
