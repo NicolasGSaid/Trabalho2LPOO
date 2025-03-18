@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public abstract class Pessoa {
 
-    int id;
-    String nome, email;
-    Endereco endereco;
-    Telefone telefone;
+    private int id;
+    private String nome, email;
+    private Endereco endereco;
+    private Telefone telefone;
 
     Pessoa(){
         this.id = 0;

@@ -2,16 +2,19 @@ package SistemaFinanceiro;
 
 import java.util.Scanner;
 
-public abstract class PessoaFisica{
-    String cpf, rg, emissor;
+public abstract class PessoaFisica extends Pessoa{
+    private String cpf, rg, emissor;
 
     PessoaFisica(){
+        super();
         this.cpf = "";
         this.rg = "";
         this.emissor = "";
     }
 
+    @Override
     public void entrar(Scanner input){
+        super.entrar(input);
         System.out.print("Digite o CPF:");
         this.cpf = input.nextLine();
         System.out.print("Digite o RG:");
@@ -21,6 +24,7 @@ public abstract class PessoaFisica{
     }
 
     public void imprimir(){
+        super.imprimir();
         System.out.println("CPF: " + this.cpf);
         System.out.println("RG: " + this.rg);
         System.out.println("Emissor: " + this.emissor);

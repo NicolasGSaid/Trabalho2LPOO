@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Telefone{
    
-    int ddd, numero;
+    private int ddd, numero;
 
     Telefone(){
         this.ddd = 0;
