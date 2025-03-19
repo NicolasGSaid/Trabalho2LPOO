@@ -1,8 +1,5 @@
 package SistemaFinanceiro;
 import java.util.Scanner;
-//import SistemaFinanceiro.Endereco;
-//import SistemaFinanceiro.Telefone;
-
 public abstract class Pessoa {
 
     private int id;
