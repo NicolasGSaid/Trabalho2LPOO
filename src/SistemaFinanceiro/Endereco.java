@@ -2,7 +2,7 @@ package SistemaFinanceiro;
 
 import java.util.Scanner;
 
-public class Endereco {
+public class Endereco implements InterfaceCadastro {
 
     private String logradouro, complemento, bairro, cidade;
     private int numero, cep;

@@ -2,7 +2,7 @@ package SistemaFinanceiro;
 
 import java.util.Scanner;
 
-public class Telefone{
+public class Telefone implements InterfaceCadastro {
    
     private int ddd, numero;
 

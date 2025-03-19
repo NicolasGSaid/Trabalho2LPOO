@@ -2,7 +2,7 @@ package SistemaFinanceiro;
 
 import java.util.Scanner;
 
-public class Fornecedor extends PessoaJuridica{ 
+public class Fornecedor extends PessoaJuridica { 
     private String LimiteCredito;
     
     Fornecedor(){

@@ -1,6 +1,6 @@
 package SistemaFinanceiro;
 import java.util.Scanner;
-public abstract class Pessoa {
+public abstract class Pessoa implements InterfaceCadastro {
 
     private int id;
     private String nome, email;
