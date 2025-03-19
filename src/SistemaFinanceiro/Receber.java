@@ -7,17 +7,20 @@ public class Receber extends Financeiro {
     private String NotaFiscal;
 
     Receber() {
+        super();
         this.cliente = null;
         this.NotaFiscal = "";
     }
     @Override
     public void entrar(Scanner input) {
+            super.entrar(input);
             System.out.print("Digite o boleto:");
             this.NotaFiscal = input.nextLine();
     }
     
     @Override
     public void imprimir() {
+        super.imprimir();
         System.out.println("Nota Fiscal: " + this.NotaFiscal);
     }
 
