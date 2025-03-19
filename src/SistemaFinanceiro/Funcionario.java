@@ -13,7 +13,7 @@ public class Funcionario extends PessoaFisica {
         this.ctps = "";
         this.salario = 0;
     }
-
+    @Override
     public void entrar(Scanner input){
         super.entrar(input);
         System.out.print("Digite a data de admissão:");
@@ -26,7 +26,7 @@ public class Funcionario extends PessoaFisica {
         this.salario = input.nextDouble();
         input.nextLine();
     }
-
+    @Override
     public void imprimir(){
         super.imprimir();
         System.out.println("Data de admissão: " + this.dataAdmissao);

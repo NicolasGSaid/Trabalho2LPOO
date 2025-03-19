@@ -15,6 +15,7 @@ public abstract class Pessoa implements InterfaceCadastro {
         this.telefone = new Telefone();
     }
 
+    @Override
     public void entrar(Scanner input){
         System.out.print("Digite o ID:");
         this.id = input.nextInt();
@@ -26,7 +27,7 @@ public abstract class Pessoa implements InterfaceCadastro {
         this.endereco.entrar(input);
         this.telefone.entrar(input);  
     }
-
+    @Override
     public void imprimir(){
         System.out.println("ID: " + this.id);
         System.out.println("Nome: " + this.nome);

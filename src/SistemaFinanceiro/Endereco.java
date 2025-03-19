@@ -15,7 +15,7 @@ public class Endereco implements InterfaceCadastro {
         this.numero = 0;
         this.cep = 0;
     }
-
+    @Override
     public void entrar(Scanner input){
             System.out.print("Digite o logradouro: ");
             this.logradouro = input.nextLine();
@@ -33,7 +33,7 @@ public class Endereco implements InterfaceCadastro {
             input.nextLine();
         }
     
-
+    @Override
     public void imprimir(){
         System.out.println("Logradouro: " + this.logradouro);
         System.out.println("Complemento: " + this.complemento);

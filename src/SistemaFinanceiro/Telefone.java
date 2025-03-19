@@ -10,7 +10,7 @@ public class Telefone implements InterfaceCadastro {
         this.ddd = 0;
         this.numero = 0;
     }
-    
+    @Override
     public void entrar(Scanner input){
         System.out.print("Digite o DDD: ");
         this.ddd = input.nextInt();
@@ -19,7 +19,7 @@ public class Telefone implements InterfaceCadastro {
         this.numero = input.nextInt();
         input.nextLine();
     }
-
+    @Override
     public void imprimir(){
         System.out.println("DDD: " + this.ddd);
         System.out.println("Número: " + this.numero);

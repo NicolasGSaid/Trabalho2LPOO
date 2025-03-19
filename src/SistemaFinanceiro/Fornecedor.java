@@ -16,7 +16,7 @@ public class Fornecedor extends PessoaJuridica {
         System.out.print("Digite o Limite de Crédito:");
         this.LimiteCredito = input.nextLine();
     }
-
+    @Override
     public void imprimir(){
         super.imprimir();
         System.out.println("Limite de Crédito: " + this.LimiteCredito);

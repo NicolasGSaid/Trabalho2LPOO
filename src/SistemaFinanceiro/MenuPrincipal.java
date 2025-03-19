@@ -12,6 +12,7 @@ public class MenuPrincipal {
         Funcionario funcionario = null; 
         Cliente cliente = null; 
         Fornecedor fornecedor = null;
+        Receber receber = null;
 
         while (menuPrincipal != 7) {
             menuSecundario = 0;
@@ -164,7 +165,48 @@ public class MenuPrincipal {
                     }
                 }
             } else if (menuPrincipal == 4) {
-                System.out.println("Menu de Contas a Receber ainda não implementado.");
+                while (menuSecundario != 5) {
+                    System.out.println("\n");
+                    System.out.println("Incluir Conta a Receber....[1]");
+                    System.out.println("Alterar Conta a Receber....[2]");
+                    System.out.println("Consultar Conta a Receber..[3]");
+                    System.out.println("Excluir Conta a Receber....[4]");
+                    System.out.println("Voltar.....................[5]");
+                    System.out.print("Opção: ");
+                    menuSecundario = input.nextInt();
+                    input.nextLine(); // Limpar o buffer
+                    if (menuSecundario == 1){
+                        if (cliente == null){
+                            System.out.println("Nenhum cliente cadastrado!");
+                        }else{
+                        receber = new Receber();
+                        receber.entrar(input);
+                        System.out.println("Conta a receber do cliente "+cliente.getNome()+" cadastrada com sucesso!");
+                        }
+                    } else if (menuSecundario == 2){
+                        if ( receber == null){
+                            System.out.println("Nenhuma conta a receber cadastrada!");
+                        }else{
+                            receber.entrar(input);
+                            System.out.println("Conta a Receber do cliente"+cliente.getNome()+ "alterada com sucesso!");
+                        }
+                    } else if (menuSecundario == 3){
+                        if (receber == null){
+                            System.out.println("Nenhuma conta a receber cadastrada!");
+                        }else{
+                            System.out.println("Dados da Conta a Receber:");
+                            System.out.println("Cliente: "+cliente.getNome());
+                            receber.imprimir();
+                        }
+                    } else if (menuSecundario == 4){
+                        if (receber == null){
+                            System.out.println("Nenhuma conta a receber cadastrada!");
+                        }else{
+                            receber = null;
+                            System.out.println("Conta a Receber excluída com sucesso!");
+                        }
+                    }
+                }
             } else if (menuPrincipal == 5) {
                 System.out.println("Menu de Contas a Pagar ainda não implementado.");
             } else if (menuPrincipal == 6) {

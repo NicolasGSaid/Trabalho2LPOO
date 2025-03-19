@@ -10,12 +10,13 @@ public class Cliente extends PessoaJuridica {
         this.limiteDeCredito = "";
     }
 
+    @Override
     public void entrar(Scanner input){
         super.entrar(input);
         System.out.print("Digite o limite de crédito:");
         this.limiteDeCredito = input.nextLine();
     }
-
+    @Override
     public void imprimir(){
         super.imprimir();
         System.out.println("Limite de crédito: " + this.limiteDeCredito);

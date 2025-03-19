@@ -23,7 +23,7 @@ public abstract class PessoaJuridica extends Pessoa{
         System.out.print("Digite o Contato:");
         this.contato = input.nextLine();
     }
-
+    @Override
     public void imprimir(){
         super.imprimir();
         System.out.println("CNPJ: " + this.cnpj);

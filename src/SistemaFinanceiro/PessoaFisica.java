@@ -23,6 +23,7 @@ public abstract class PessoaFisica extends Pessoa{
         this.emissor = input.nextLine();
     }
 
+    @Override
     public void imprimir(){
         super.imprimir();
         System.out.println("CPF: " + this.cpf);
