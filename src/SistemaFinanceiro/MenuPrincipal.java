@@ -18,7 +18,7 @@ public class MenuPrincipal {
         while (menuPrincipal != 7) {
             menuSecundario = 0;
             System.out.println("\n");
-            System.out.println("Menu de Funcionários...[1]");
+            System.out.println("Menu de Funcionários...[1]"); 
             System.out.println("Menu de Clientes.......[2]");
             System.out.println("Menu de Fornecedores...[3]");
             System.out.println("Contas a Receber.......[4]");
